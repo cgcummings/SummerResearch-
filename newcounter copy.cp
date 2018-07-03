@@ -29,12 +29,8 @@ int main()
 
         do
         {
-            // after putting in data, input "\n"
-            // std::cin detects and groups words
-            // this means that our do-while loop will keep finding 
-            // strings until it matches our if comparison below "input == whatever"
-            // but newline characters aren't strings or words, they're one character
-            // "expressed" by a string
+            // after putting in data, hit enter
+            // https://stackoverflow.com/a/16737404 looks promising
             if (!(std::cin >> input) || (input == '\n'))
                 loop = false;
 
