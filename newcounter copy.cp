@@ -24,14 +24,15 @@ int main()
     {
         std::ofstream out("hits.txt");
         int input;
+        bool loop = true;
+        std::cout << "Please enter the hit data: "; 
 
         do
         {
-            std::cout << "Please enter the hit data: "; 
-
-            // after putting in data, input zero 
-            if (!(std::cin >> input) || (input == 0))
-                break; 
+            // after putting in data, hit enter
+            // https://stackoverflow.com/a/16737404 looks promising
+            if (!(std::cin >> input) || (input == '\n'))
+                loop = false;
 
             out << input << " ";
 
@@ -39,7 +40,7 @@ int main()
             sum += input; 
             ++counter;
         }
-        while (true);
+        while (loop);
     }
 
     std::cout << "Sum of hits entered: " << sum << endl ; 
