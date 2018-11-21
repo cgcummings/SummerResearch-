@@ -24,8 +24,6 @@ int main()
     {
         ofstream out("hits.txt");
         int input;
-
-       
     }
 
     cout << "Sum of hits entered: " << sum << endl ; 
